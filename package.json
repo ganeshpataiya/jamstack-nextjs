@@ -8,8 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "next": "10.2.0",
+    "next-tinacms-github": "^0.41.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-tinacms-github": "^0.41.0",
+    "styled-components": "^5.3.0",
+    "tinacms": "^0.41.0"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.2",
+    "@types/react": "^17.0.11",
+    "hygen-next-tinacms-github": "https://github.com/dwalkr/hygen-next-tinacms-github",
+    "typescript": "^4.3.2"
   }
 }
