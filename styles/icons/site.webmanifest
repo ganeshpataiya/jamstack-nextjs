@@ -1,0 +1,19 @@
+{
+    "name": "",
+    "short_name": "",
+    "icons": [
+        {
+            "src": "/themes/custom/ge_unified/assets/icons/android-chrome-192x192.png?v=zX70X9A8R5",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/themes/custom/ge_unified/assets/icons/android-chrome-512x512.png?v=zX70X9A8R5",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

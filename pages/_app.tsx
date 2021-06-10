@@ -1,4 +1,8 @@
 import App from 'next/app'
+import '../styles/css/ge_unified.style.css'
+import '../styles/css/iconography.css'
+import '../styles/css/styles.css'
+
 import { TinaCMS, TinaProvider } from 'tinacms'
 import {
   GithubClient,
