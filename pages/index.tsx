@@ -16,6 +16,7 @@ export default function Home({ file, preview }) {
     fields: [
               { name: 'title', component: 'text' },
               { name: 'description', component: 'textarea' },
+              { name: 'price', component: 'number'}
             ],
   }
 
@@ -44,6 +45,9 @@ export default function Home({ file, preview }) {
 
         <p className="description">
           {data.description}
+        </p>
+        <p className="number">
+          {data.number}
         </p>
       </main>
 
