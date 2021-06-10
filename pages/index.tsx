@@ -46,8 +46,8 @@ export default function Home({ file, preview }) {
         <p className="description">
           {data.description}
         </p>
-        <p className="number">
-          {data.number}
+        <p className="price">
+          {data.price}
         </p>
       </main>
 
