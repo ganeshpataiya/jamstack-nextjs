@@ -8,7 +8,7 @@ npm install
 yarn install
 ```
 
-2. Update variabled in .env file.
+2. Update GitHub variables in .env file.
 
 3. Run the development server:
 
