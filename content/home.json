@@ -1,6 +1,4 @@
 {
-  "markdownBody": "{\n  \"title\": \"This is the title v2\",\n  \"description\": \"This is description. I'm editing this live.\\n-Jorge \",\n  \"price\": 125,\n  \"hero_image\": \"/static/iceland-1.jpg\"\n}",
-  "frontmatter": {},
   "title": "title",
   "description": "description",
   "price": 123,
