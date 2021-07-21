@@ -9,5 +9,6 @@
     "type": "file",
     "previewSrc": "https://raw.githubusercontent.com/GE-DSG/jamstack-nextjs/main/public/static/iceland-1.jpg"
   },
-  "image": "/static/iceland-1.jpg"
+  "image": "/static/iceland-1.jpg",
+  "hero_image": "/static/iceland-1.jpg"
 }
