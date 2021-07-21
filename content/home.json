@@ -2,5 +2,11 @@
   "title": "This is the title v2",
   "description": "This is description. I'm editing this live \n-Jorge ",
   "price": 125,
-  "hero_mage": "/static/iceland-1.jpg"
+  "hero_mage": {
+    "id": "public/static/iceland-1.jpg",
+    "filename": "iceland-1.jpg",
+    "directory": "public/static/",
+    "type": "file",
+    "previewSrc": "https://raw.githubusercontent.com/GE-DSG/jamstack-nextjs/main/public/static/iceland-1.jpg"
+  }
 }
