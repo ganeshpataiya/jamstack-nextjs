@@ -8,5 +8,6 @@
     "directory": "public/static/",
     "type": "file",
     "previewSrc": "https://raw.githubusercontent.com/GE-DSG/jamstack-nextjs/main/public/static/iceland-1.jpg"
-  }
+  },
+  "image": "/static/iceland-1.jpg"
 }
