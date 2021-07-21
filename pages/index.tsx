@@ -16,7 +16,17 @@ export default function Home({ file, preview }) {
     fields: [
               { name: 'title', component: 'text' },
               { name: 'description', component: 'textarea' },
-              { name: 'price', component: 'number'}
+              { name: 'price', component: 'number'},
+              { name: 'hero_image', 
+                component: 'image',
+                // Generate the frontmatter value based on the filename
+                parse: media => `/static/${media.filename}`,
+
+                // Decide the file upload directory for the post
+                uploadDir: () => '/public/static/',
+
+                // Generate the src attribute for the preview image.
+                previewSrc: fullSrc => fullSrc.replace('/public', ''),}
             ],
   }
 
@@ -48,6 +58,12 @@ export default function Home({ file, preview }) {
         </p>
         <p className="price">
           {data.price}
+        </p>
+        <p className="hero_image">
+          <img
+            src={data.hero_image}
+            alt='hero image'
+          />
         </p>
       </main>
 
