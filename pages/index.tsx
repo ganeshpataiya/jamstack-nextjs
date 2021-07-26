@@ -1,23 +1,19 @@
 import Head from 'next/head'
-/*
- ** Import helpers and GetStaticProps type
- */
-import { getGithubPreviewProps, parseJson } from 'next-tinacms-github'
-import {
-  useGithubJsonForm,
-  useGithubToolbarPlugins,
-} from 'react-tinacms-github'
-import { usePlugin } from 'tinacms'
-import { GetStaticProps } from 'next'
+import { getGithubPreviewProps, parseJson } from "next-tinacms-github"
+import { useGithubJsonForm, useGithubToolbarPlugins } from "react-tinacms-github"
+import { usePlugin } from "tinacms"
+import getGlobalStaticProps from "../utils/getGlobalStaticProps"
 
-export default function Home({ file, preview }) {
+//export default function Home({ file, preview }) {
+const Home = ({ file, preview }) => {  
   const formOptions = {
     label: 'Home Page',
     fields: [
-              { name: 'title', component: 'text' },
-              { name: 'description', component: 'textarea' },
-              { name: 'price', component: 'number'},
-              { name: 'hero_image', 
+              { label: 'Title', name: 'title', component: 'text' },
+              { label: 'Description', name: 'description', component: 'textarea' },
+              { label: 'Price', name: 'price', component: 'number'},
+              { label: 'Hero Image',
+                name: 'hero_image', 
                 component: 'image',
                 // Generate the frontmatter value based on the filename
                 parse: media => `/static/${media.filename}`,
@@ -41,7 +37,7 @@ export default function Home({ file, preview }) {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>GE | Building a world that works | General Electric</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -217,29 +213,42 @@ export default function Home({ file, preview }) {
   )
 }
 
-/*
- ** Fetch data with getStaticProps based on 'preview' mode
+/**
+ * Fetch data with getStaticProps based on 'preview' mode
  */
-export const getStaticProps: GetStaticProps = async function ({
-  preview,
-  previewData,
-}) {
+ export const getStaticProps = async function ({ preview, previewData }) {
+  const global = await getGlobalStaticProps(preview, previewData)
+
   if (preview) {
-    return getGithubPreviewProps({
-      ...previewData,
-      fileRelativePath: 'content/home.json',
-      parse: parseJson,
-    })
+    // get data from github
+    const file = (
+      await getGithubPreviewProps({
+        ...previewData,
+        fileRelativePath: "content/home.json",
+        parse: parseJson,
+      })
+    ).props
+
+    return {
+      props: {
+        ...file,
+        ...global,
+      },
+    }
   }
+  // render from the file system.
   return {
     props: {
       sourceProvider: null,
       error: null,
       preview: false,
       file: {
-        fileRelativePath: 'content/home.json',
-        data: (await import('../content/home.json')).default,
+        fileRelativePath: "content/home.json",
+        data: (await import("../content/home.json")).default,
       },
+      ...global,
     },
   }
 }
+
+export default Home
